@@ -252,9 +252,9 @@ def consent(study, doc, lang):
         parts += ['## ' + LABELS[lang][11], value(t.get('recording_rights'))]
     parts += ['## ' + LABELS[lang][12], common_contacts(study, lang),
               '## ' + LABELS[lang][13], reply(study, doc, lang)]
-    refs = {'en': 'Ethics reference number: __________________\nApproval expiry (if applicable): __________________',
-            'zh-Hant': '倫理審批參考編號：__________________\n批准有效期（如適用）：__________________',
-            'zh-Hans': '伦理审批参考编号：__________________\n批准有效期（如适用）：__________________'}
+    refs = {'en': 'HREC Reference Number: __________________\nApproval expiry (if applicable): __________________',
+            'zh-Hant': '香港大學研究操守委員會參考編號：__________________\n批准有效期（如適用）：__________________',
+            'zh-Hans': '香港大学研究操守委员会参考编号：__________________\n批准有效期（如适用）：__________________'}
     parts += [refs[lang], 'Prepared / 擬備日期 / 拟备日期: ' + value(study.get('prepared_date'))]
     return '\n\n'.join(parts) + '\n'
 
