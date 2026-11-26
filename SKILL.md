@@ -1,99 +1,40 @@
 ---
-name: hku-consent-form
-description: 依研究提案產生香港大學 HREC 知情同意書（成人／教師、校長、家長／監護人、學生 assent，英文＋中文繁或簡）以及 HREC 申請表 Part A–E 草稿（個人資料留空）。Use when user says "做 consent form"、"同意書"、"informed consent"、"ethical approval"、"HREC 申請表"、"/hku-consent-form"、drops a proposal and asks for ethics documents, or asks to check consent forms against a proposal.
+name: hku-med-ethics-toolkit
+description: 從教育碩士研究計畫準備英繁簡三語 Word 同意書與 MEd Capstone 倫理申請草稿，核對導師電話、程序及附件一致性；不代替倫理審批。
 ---
 
-# hku-consent-form
+# MEd ethics toolkit
 
-從研究提案抽取欄位，套用 HKU Human Research Ethics Committee（HREC）慣用語，產出兩種東西：
+Read [current rules](reference/current-med-rules.md) first. This derives from hku-consent-form; MEd independent/Capstone uses **FE54/926 Part A–C**, not the upstream general HREC Part A–E.
 
-1. 各對象版本的知情同意書（.docx）。
-2. HREC 申請表（Application Form for Ethics Approval）Part A–E 的內容草稿（.md），個人資料留空。
+Read the proposal and instruments; extract [fields](reference/fields.md) with source locations. Unknown or conflicting facts stay TO CONFIRM. Do not assume minimal risk, retention, compensation, storage, spoken language from location, prior permission, or approval. Ask one combined set of necessary questions while preparing supported parts.
 
-語句庫來自 HKU 教育學院官方樣板與多份已獲批的申請，不是自創。
+Determine Capstone versus dissertation. The bundled official-template filler supports Capstone only. For dissertation obtain its separate current template/checklist; do not rename FE54/926.
 
-## 使用方式
+Choose the actual audiences: adult/teacher, principal school permission, parent permission, age-appropriate student assent. School studies need principal permission even if principals are not data sources. Consult checklist item 6 with the supervisor before selecting active/passive parental consent; never default to opt-out. School/parent permission does not override a child's refusal.
 
-```
-/hku-consent-form <proposal 路徑或資料夾> [對象: adult|teacher|principal|parent|student] [語言: en|zh-hant|zh-hans|all] [--no-application]
-```
+## One consistent pack
 
-預設同意書與申請表草稿都做；只要同意書加 `--no-application`，只要申請表說「只做申請表」。不給對象與語言時，依 proposal 自行判斷（見 Step 2），再在回覆裡說明判斷依據。
+Unless otherwise requested generate **en, zh-Hant, zh-Hans**, separate Word files per audience. The upstream [English](reference/language-en.md) and [Chinese](reference/language-zh.md) banks are wording examples; **current rules and supplied facts override old defaults**. Do not copy staff-PI introductions, automatic minimal-risk/3-year-retention claims, absolute confidentiality, unlimited deletion promises, future reuse, or claims that parental permission is already obtained.
 
-## 流程
+Write complete role-specific sections: purpose; procedures (duration, occasions, location, language, data and pilot/main scope); risks/mitigation; benefits; compensation; privacy/legal limits; storage/location/access; retention/destruction; voluntary participation, withdrawal/deletion method/cut-off; power safeguards; matching if any. Principal letters describe permitted school activities, parents read about their child, assent uses the child's reading level.
 
-### Step 1　讀 proposal 與相關檔案
+Recording choices must match actual audio/video plans, include review/erasure rights and what happens if declined. For classroom video explain exclusion from capture; later blurring alone does not prevent collection. Do not offer named reporting if the study promises de-identified reports.
 
-- docx 用 `pandoc <file> -t plain --wrap=none`；.doc 用 `textutil -convert txt -stdout`；pdf 用 `pdftotext -layout`。
-- 同資料夾若有 HREC application form、interview protocol、questionnaire，一併讀。同意書的每一句話都必須能在這些文件裡找到依據，反之亦然（見 Step 5）。
-- 若 `local/pi-defaults.md` 存在，讀取 PI 預設聯絡資料。該檔不隨 skill 公開，內容由使用者維護。
+**Hong Kong: every consent/permission/assent form includes the supervisor's name, email and readily reachable telephone. Confirm the owner/reachability; a student's number or faculty switchboard does not satisfy this check.**
 
-### Step 2　抽取欄位
+## Generate
 
-依 `reference/fields.md` 的欄位表逐項抽取，寫成一份簡短的欄位摘要（給使用者看，也給自己用）。抽不到的欄位：
+Create private study.json using the [schema](reference/fields.md) and [fictional example](examples/study.example.json). Supply source-backed section text in all three languages; the renderer does not translate or assess risk.
 
-- 有慣例預設值的（風險＝minimal、補償＝無、保存＝首篇論文發表後 3 年）直接用預設並標註「預設」。
-- 沒有預設的（PI 電話、資料收集起訖、學生年級）留 `[ ]` 佔位符並在回覆裡列出，不要杜撰。
+Run `python3 scripts/build_pack.py /private/path/study.json --out /private/path/new-draft`. The folder must be new. It outputs editable Word/Markdown, Part A field sheet, summary draft and attachment/checklist evidence tracker. Render all Word files with an available renderer, fix Chinese wrapping/page breaks, and make the summary actually one page. Report missing rendering capability honestly.
 
-**判斷對象**：proposal 提到學校場域＋未成年學生 → 校長＋家長＋學生 assent 三套；教師受訪 → teacher；成人受試者（含大學生、教師、專業人士）→ adult；研究者本人是受試者的老師／上司 → 加 conflict-of-interest 段。
+Optionally add `--official-template /private/path/FE54-926.docx`. Use a fresh blank official template, never an already signed application. Download the official .doc and save a DOCX copy in Word first. Filler checks version/labels, fills only Part A and inserts an explicit draft human-participants answer; it leaves declarations and all signatures untouched. Student manually confirms the official checkbox, declaration and layout. On template mismatch stop; do not guess fields.
 
-**判斷中文字體**：受試者在中國內地（提到微信、小紅書、騰訊會議、普通話、內地學校）→ 簡體；香港學校／家長 → 繁體；台灣 → 繁體。拿不準就問，不要兩種都做。
+Keep proposals/identities/generated packs outside the public repository. No upload, email, submission, signatures or sharing changes without the student's instruction.
 
-### Step 3　選格式
+## Handoff
 
-| 對象 | 格式 | 語句庫段落 |
-|---|---|---|
-| adult / teacher（PI 為教職員） | 分節式（PURPOSE … SIGNATURE） | language-en.md §A、language-zh.md §A |
-| teacher / professor（研究者為學生） | 信函式（Dear teacher … Reply Slip） | §B |
-| principal | 信函式＋校方回條 | §C |
-| parent / guardian | 分節式或信函式，用「your child／貴子弟」 | §D |
-| student assent | 信函式，簡單語言，分小學／初中／高中三檔 | §E |
-| 口頭或 email 同意腳本 | 短段落 | §F |
+Deliver three-language forms, Part A draft, one-page summary, English/original-language instruments and evidence/missing-item tracker for official FE33/226. Never auto-tick Done because a file exists. Record exact locations, unresolved decisions and reasons for N/A. A clean script report is not ethics approval or proof of readiness.
 
-### Step 4　寫 Markdown 並轉 docx
-
-- 每個版本一個 `.md`，檔名慣例：`consent-<audience>-<lang>.md`，例如 `consent-teacher-en.md`、`consent-parent-zh-hant.md`。
-- 不要自由發揮措辭。逐段從語句庫複製，只替換 `{{變數}}`。需要增寫的（procedures 細節、benefits）用 proposal 的原話改寫成第二人稱、白話。
-- 章節標題在英文版全大寫（HKU 樣板慣例）；中文版用「研究目的／程序／潛在風險…」。
-- 簽名區與回條放在水平線 `---` 之後。依使用者提供的樣本或明確指示決定回條形式：需要參與者逐項作二選一時，每個實質決定各用一行 `◻ I agree　◻ I do not agree`，姓名、簽名、日期另列；不要把「已閱讀／有機會提問／明白自願」等正文聲明拆成多個 checkbox。只有參考樣本採刪除方式時，才用 `同意 / 不同意（請刪去不適用者）`。不得把 Markdown `**` 當作腳註符號寫入 Word；需要粗體時必須使用真正的 Word 粗體格式。
-- 轉檔：`pandoc consent-x.md -o consent-x.docx`；有 `assets/reference.docx` 時加 `--reference-doc`。
-- 輸出到 proposal 所在資料夾，除非使用者指定。不覆蓋既有檔案：同名時加 `-v2`。
-
-### Step 4b　寫申請表草稿
-
-依 `reference/application-form.md` 逐題填，輸出 `hrec-application-draft.md`。規則：
-
-- 保留題號與原題目，答案寫在題目下一行；勾選題寫 `Yes` 或 `No` 並附一句理由。
-- PI、Co-I、經費、簽名全部留 `[ ]`。
-- 第 7 題只寫涉及人的方法，四小段，半頁以內。
-- 第 8、10、11、12 題的答案要跟同意書逐字對得上；先寫同意書再填申請表，避免兩邊各寫一套。
-- 已有申請表（使用者給了舊版）時，不重寫，改成列出「舊版與 proposal／同意書不一致處」。
-
-### Step 5　對照檢查
-
-跑 `reference/checklist.md` 全部項目，在回覆裡列出未通過項。最常見的三類問題：
-
-1. 同意書提到 proposal 沒寫的資料來源（例如社群媒體內容），或反過來。
-2. 保存年限、錄音／錄影、同意方式，與 HREC 申請表 Q10–Q12 不一致。
-3. 佔位符沒清（`[Date]`、`XX`）、PI 職稱前後不一、電話兩個版本不同。
-
-### Step 6　回覆
-
-列出：產出的檔案、抽取欄位摘要（含哪些是預設、哪些待填）、申請表哪些題留空要使用者填、Part D 附件清單、檢查清單未通過項。不重述同意書內容。
-
-## 檔案
-
-- `reference/fields.md`：抽取欄位表與預設值
-- `reference/language-en.md`：英文語句庫，依對象分段
-- `reference/language-zh.md`：中文語句庫，繁簡並列
-- `reference/application-form.md`：HREC 申請表逐題填法、預設答案、勾選觸發條件
-- `reference/checklist.md`：送審前一致性檢查
-- `local/`：使用者私有資料（PI 聯絡方式），已列入 .gitignore
-
-## 注意
-
-- 同意書須列出 HREC 電話 3917-5267 及電郵 hrec@hku.hk。舊樣板的電話 2241-5267 已停用，看到就改。
-- 中文「Human Research Ethics Committee」統一使用繁體「香港大學研究操守委員會」、簡體「香港大学研究操守委员会」。正文、頁尾及下方編號欄均須逐字核對；編號欄沿用「香港大學研究操守委員會參考編號」（簡體「香港大学研究操守委员会参考编号」），不得自行改譯委員會名稱。
-- 識別資料保存不得超過首篇論文發表後 5 年；最少 3 年。
-- 未成年受試者一定要三套：校長、家長、學生 assent。學生 assent 不能取代家長同意。
-- 同意書不放表情符號，也不放研究假設或文獻引用。
+Route: student discussion/declaration → supervisor endorsement → designated reviewer → Office of Research. No project data collection/analysis before required approval; data collection starts **only after the Office of Research approval email**. Research pilots need approval; fictional classroom practice is not a research pilot permission.

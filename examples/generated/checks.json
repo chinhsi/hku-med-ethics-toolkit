@@ -1,0 +1,33 @@
+{
+  "status": "DRAFT_REQUIRES_HUMAN_REVIEW",
+  "issues": [
+    "Teaching example; never use its fictional facts or contacts for recruitment",
+    "Missing/unconfirmed: student.university_number",
+    "Missing/unconfirmed: student.email",
+    "Missing/unconfirmed: supervisor.email",
+    "Missing/unconfirmed: supervisor.phone",
+    "Confirm supervisor telephone owner and reachability (official item 18)",
+    "Missing/unconfirmed: teacher.zh-Hant.storage",
+    "Missing/unconfirmed: teacher.zh-Hant.power_safeguards",
+    "Missing/unconfirmed: teacher.zh-Hans.storage",
+    "Missing/unconfirmed: teacher.zh-Hans.power_safeguards"
+  ],
+  "not_checked": [
+    "truth/source accuracy",
+    "cross-language meaning",
+    "ethical risk/consent route",
+    "Word page layout",
+    "one-page summary length",
+    "approval/submission"
+  ],
+  "source_sha256": "164466405348387e1ba3f7be83ac5494f0cc1a81c5cc80769018dd2f145e2c6e",
+  "official_template_sha256": null,
+  "source_map": [
+    {
+      "field": "all example facts",
+      "source": "Fictional teaching scenario authored for this repository",
+      "location": "examples/study.example.json; not empirical data or an approved proposal"
+    }
+  ],
+  "generated_utc": "2026-11-26T03:20:08.237464+00:00"
+}

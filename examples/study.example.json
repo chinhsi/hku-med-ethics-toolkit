@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "route": "capstone",
+  "example": true,
+  "in_hong_kong": true,
+  "school_based": false,
+  "human_participants": true,
+  "recording_modes": [
+    "audio"
+  ],
+  "student": {
+    "name": "Student Researcher (fictional)",
+    "programme": "MEd (teaching example)",
+    "university_number": "TO CONFIRM",
+    "email": "student@example.invalid"
+  },
+  "supervisor": {
+    "name": "Supervisor (fictional)",
+    "email": "supervisor@example.invalid",
+    "phone": "TO CONFIRM — supervisor telephone",
+    "phone_confirmed": false
+  },
+  "title": {
+    "en": "Teachers’ decisions about AI-generated lesson materials",
+    "zh-Hant": "教師對 AI 生成課堂材料的取捨",
+    "zh-Hans": "教师对 AI 生成课堂材料的取舍"
+  },
+  "prepared_date": "2026-11-26",
+  "start_date": "2027-02-01",
+  "end_date": "2027-05-31",
+  "consent_route_decision": "Fictional practice: independent adult teachers recruited outside a school-based project. Real classification and permissions require supervisor confirmation.",
+  "summary": {
+    "en": "This fictional teaching example explores how six adult Chinese-language teachers decide whether to adopt, revise or discard AI-generated lesson materials. Interested teachers respond independently to an invitation circulated through professional networks; employers will not nominate participants or receive participation lists. Each volunteer will take part in one approximately 30-minute online interview in Putonghua between February and May 2027. Questions concern a specific preparation episode, the sequence of actions and reasons for retaining or discarding materials. With separate prior permission the interview will be audio-recorded; otherwise the researcher will take notes. No video, identifiable pupil information, original pupil work or screenshots will be collected. After approval and consent, the researcher will conduct interviews, check transcripts against recordings, de-identify text and compare accounts of decision-making. Participants may skip questions or stop; the proposed withdrawal/deletion deadline is 14 days after the interview, before the identity key is destroyed. Storage, legal limits and access are described in the consent draft. The proposed retention plan and all contacts need supervisor confirmation. This is not an approved study and must not be used for recruitment.",
+    "zh-Hant": "本虛構教學案例探討六位成年中文教師如何決定採用、修改或捨棄 AI 生成的課堂材料。有意者透過專業網絡轉發的邀請自行聯絡，僱主不提名、不取得參與名單。擬於2027年2至5月，以普通話進行一次約30分鐘的網上訪談，了解具體備課事件、行動過程及取捨理由。另行取得錄音同意才錄音；不同意則筆記。不錄影，不收可識別學生資料、原始學生作業或截圖。獲批准及同意後，訪談、核對轉寫、去識別並比較決策經驗。可拒答或停止；擬於訪談後14日內、銷毀身份對照前接受撤回資料。儲存、保密限制及存取寫於同意書草稿；保存方案及聯絡資料待導師確認。本案例未獲批准，不能用於招募。",
+    "zh-Hans": "本虚构教学案例探讨六位成年中文教师如何决定采用、修改或舍弃 AI 生成的课堂材料。有意者通过专业网络转发的邀请自行联系，雇主不提名、不取得参与名单。拟于2027年2至5月，以普通话进行一次约30分钟的网上访谈，了解具体备课事件、行动过程及取舍理由。另行取得录音同意才录音；不同意则笔记。不录像，不收可识别学生数据、原始学生作业或截图。获批准及同意后，访谈、核对转写、去识别并比较决策经验。可拒答或停止；拟于访谈后14日内、销毁身份对照前接受撤回数据。存储、保密限制及访问写于同意书草稿；保存方案及联系信息待导师确认。本案例未获批准，不能用于招募。"
+  },
+  "source_map": [
+    {
+      "field": "all example facts",
+      "source": "Fictional teaching scenario authored for this repository",
+      "location": "examples/study.example.json; not empirical data or an approved proposal"
+    }
+  ],
+  "instruments": [
+    {
+      "name": "Fictional interview protocol",
+      "kind": "interview",
+      "language": "English / Putonghua written in Traditional and Simplified Chinese",
+      "path": "interview-protocol.example.md"
+    }
+  ],
+  "checklist_evidence": [
+    {
+      "item": 18,
+      "status": "to_check",
+      "location": "Supervisor contact in all generated forms",
+      "reason": "Fictional contact: replace and confirm actual supervisor telephone owner/reachability."
+    },
+    {
+      "item": 19,
+      "status": "to_check",
+      "location": "Three language versions of each consent form",
+      "reason": "Human comparison needed; a script cannot certify equivalent meaning."
+    }
+  ],
+  "documents": [
+    {
+      "audience": "teacher",
+      "consent_mode": "active",
+      "texts": {
+        "en": {
+          "purpose": "You are invited to a master's student project about how teachers decide whether to adopt, revise or discard AI-generated lesson materials. This document uses fictional example facts for teaching; it is not a recruitment invitation.",
+          "procedures": "If you agree in a real approved study with these arrangements, you would join one approximately 30-minute online interview in Putonghua between February and May 2027, at a mutually convenient time. You would discuss one preparation episode and your decisions. With separate permission we would audio-record; otherwise we would take notes. We would not video-record, collect pupil identities, original pupil work or screenshots. Please describe events without identifying pupils, colleagues or schools.",
+          "risks": "Discussing professional decisions may feel uncomfortable or reveal workplace concerns. You may skip questions or stop. The interviewer will redirect identifying details and remove or generalise indirect identifiers. Unexpected disclosure risks will be discussed with the supervisor; this draft does not declare the study minimal risk automatically.",
+          "benefits": "No personal or teaching improvement is guaranteed. The study may help describe teachers' decision-making; you may request a short summary of findings.",
+          "compensation": "In this fictional plan no payment or reimbursement is offered.",
+          "privacy": "Reports would use pseudonyms and remove or generalise names, schools and identifying details. The researcher will know your identity, so the interview is confidential rather than anonymous at collection. Access would be limited to the student researcher and supervisor. Confidentiality is limited by applicable legal disclosure obligations; unnecessary identifying details would not be collected and the identity key would be stored separately. Additional safeguards and any disclosure risk require supervisor review.",
+          "storage": "The proposed plan uses encrypted password-protected files on the student's research device, held in Hong Kong, with a separately encrypted identity key and encrypted backup under the supervisor's control. No external AI transcription service is included. Access is limited to the student and supervisor. This proposed arrangement needs confirmation before use.",
+          "retention": "Proposed plan, pending supervisor and policy confirmation: delete audio recordings and the identity key after transcript checking and the 14-day withdrawal period, whichever is later. Retain de-identified transcripts for three years after project completion, then securely delete them. Keep signed consent records separately for the same period. This is a fictional study decision, not a default HKU rule.",
+          "withdrawal": "Participation is voluntary. Declining, skipping or stopping will not affect your employment, assessment or relationship with the researcher. You may request deletion by contacting the researcher or supervisor within 14 days after the interview. Once the identity key is destroyed, we may be unable to locate your individual de-identified contribution. This proposed cut-off must be confirmed before recruitment.",
+          "power_safeguards": "Employers would only circulate an invitation; they would not select participants or receive participation lists. The researcher would not assess participants. Any colleague relationship would be declared before consent; requests would be made privately, with no workplace pressure. These safeguards are proposed for the fictional scenario and require confirmation.",
+          "matching": "No questionnaire, pupil work or platform records would be linked. A separate identity key would connect the interview to a withdrawal request only, and would be destroyed as described above.",
+          "recording_rights": "Audio recording would start only after you separately agree. You could decline recording and still join with notes. You could review the recording and request erasure of part or all of it while it is retained; contact the researcher within 14 days after the interview, before its planned deletion. No video recording is proposed."
+        },
+        "zh-Hant": {
+          "purpose": "本教育碩士學生研究擬了解教師如何決定採用、修改或捨棄 AI 生成的課堂材料。本文全部為虛構教學案例，並非招募邀請。",
+          "procedures": "若真實研究獲批准且採用這些安排，您將於2027年2至5月，在雙方方便的時間以普通話參加一次約30分鐘的網上訪談，談一件具體備課事件及取捨。另行同意才錄音；不同意則筆記。不錄影，不收學生身份、原始學生作業或截圖。描述事件時請勿透露學生、同事或學校的可識別資訊。",
+          "risks": "談專業決定可能令人不適或涉及工作場所顧慮。您可拒答或停止。訪談者會提醒避免透露身份，並刪除或概括間接識別線索。意外披露風險須與導師討論；本草稿不自動判定研究為最低風險。",
+          "benefits": "不保證個人或教學改善。研究可能幫助描述教師決策，您可索取簡短結果摘要。",
+          "compensation": "本虛構計畫不提供酬金或費用補償。",
+          "privacy": "報告擬使用假名，刪除或概括姓名、學校及可識別細節。研究者知道您的身份，因此收集時屬保密訪談，並非匿名。資料僅供學生研究者及導師查閱。保密受適用法律的披露義務限制；不收非必要身份資料，身份對照另存。額外保障及披露風險待導師審核。",
+          "storage": "擬將加密且設密碼的研究檔案存於學生研究者在香港保管的研究裝置；身份對照另行加密，並由導師控制加密備份。不包含外部 AI 轉錄服務。僅學生研究者及導師可存取。此為待確認方案，使用前須核實。",
+          "retention": "擬議方案待導師及政策核對：完成轉寫核對及訪談後14日撤回期（以較後者為準）後，刪錄音及身份對照。去識別轉寫稿保存至研究完成後三年再安全刪除；簽署同意書分開保存相同期限。這是虛構研究的擬議決定，不是 HKU 通用預設。",
+          "withdrawal": "參與自願。拒絕、拒答或停止不影響工作、評核或與研究者的關係。可在訪談後14日內聯絡研究者或導師要求刪資料。身份對照銷毀後，可能無法找回您個別的去識別內容。招募前須確認此擬議期限。",
+          "power_safeguards": "僱主僅轉發邀請，不選人或取得參與名單。研究者不評核參與者；如有同事關係，會在同意前說明。邀請私下處理，不施加工作壓力。此為虛構案例的擬議保障，仍待確認。",
+          "matching": "不配對問卷、學生作業或平台紀錄。身份對照只供處理訪談撤回要求，並依上述安排銷毀。",
+          "recording_rights": "只有另行同意才開始錄音。不同意錄音仍可參加，改以筆記。錄音保存期間您可檢視，並要求刪除部分或全部；請在訪談後14日內、擬定刪除前聯絡研究者。不進行錄影。"
+        },
+        "zh-Hans": {
+          "purpose": "本教育硕士学生研究拟了解教师如何决定采用、修改或舍弃 AI 生成的课堂材料。本文全部为虚构教学案例，并非招募邀请。",
+          "procedures": "若真实研究获批准且采用这些安排，您将于2027年2至5月，在双方方便的时间以普通话参加一次约30分钟的网上访谈，谈一件具体备课事件及取舍。另行同意才录音；不同意则笔记。不录像，不收学生身份、原始学生作业或截图。描述事件时请勿透露学生、同事或学校的可识别信息。",
+          "risks": "谈专业决定可能令人不适或涉及工作场所顾虑。您可拒答或停止。访谈者会提醒避免透露身份，并删除或概括间接识别线索。意外披露风险须与导师讨论；本草稿不自动判定研究为最低风险。",
+          "benefits": "不保证个人或教学改善。研究可能帮助描述教师决策，您可索取简短结果摘要。",
+          "compensation": "本虚构计划不提供酬金或费用补偿。",
+          "privacy": "报告拟使用化名，删除或概括姓名、学校及可识别细节。研究者知道您的身份，因此收集时属保密访谈，并非匿名。数据仅供学生研究者及导师查阅。保密受适用法律的披露义务限制；不收非必要身份数据，身份对照另存。额外保障及披露风险待导师审核。",
+          "storage": "拟将加密且设密码的研究文件存于学生研究者在香港保管的研究设备；身份对照另行加密，并由导师控制加密备份。不包含外部 AI 转录服务。仅学生研究者及导师可访问。此为待确认方案，使用前须核实。",
+          "retention": "拟议方案待导师及政策核对：完成转写核对及访谈后14日撤回期（以较后者为准）后，删录音及身份对照。去识别转写稿保存至研究完成后三年再安全删除；签署同意书分开保存相同期限。这是虚构研究的拟议决定，不是 HKU 通用预设。",
+          "withdrawal": "参与自愿。拒绝、拒答或停止不影响工作、评核或与研究者的关系。可在访谈后14日内联系研究者或导师要求删数据。身份对照销毁后，可能无法找回您个别的去识别内容。招募前须确认此拟议期限。",
+          "power_safeguards": "雇主仅转发邀请，不选人或取得参与名单。研究者不评核参与者；如有同事关系，会在同意前说明。邀请私下处理，不施加工作压力。此为虚构案例的拟议保障，仍待确认。",
+          "matching": "不配对问卷、学生作业或平台记录。身份对照只供处理访谈撤回要求，并依上述安排销毁。",
+          "recording_rights": "只有另行同意才开始录音。不同意录音仍可参加，改以笔记。录音保存期间您可查看，并要求删除部分或全部；请在访谈后14日内、拟定删除前联系研究者。不进行录像。"
+        }
+      }
+    }
+  ]
+}
